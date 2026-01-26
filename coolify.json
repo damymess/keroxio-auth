@@ -1,0 +1,6 @@
+{
+    "subdomain":  "auth.keroxio.fr",
+    "healthcheck":  "/health",
+    "port":  8000,
+    "name":  "keroxio-auth"
+}
