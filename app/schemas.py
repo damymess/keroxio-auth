@@ -6,6 +6,11 @@ class UserCreate(BaseModel):
     email: str
     password: str
 
+class UserUpdate(BaseModel):
+    username: Optional[str] = None
+    email: Optional[str] = None
+    password: Optional[str] = None
+
 class UserOut(BaseModel):
     id: int
     username: str
