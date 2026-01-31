@@ -1,7 +1,8 @@
 # ===========================================
 # Keroxio - Auth Service Dockerfile
 # ===========================================
-# Multi-stage build optimisé pour production
+# Multi-stage build optimise pour production
+# Cache bust: 20260131162918
 
 FROM python:3.11-slim AS builder
 
@@ -38,7 +39,8 @@ RUN groupadd --gid 1000 appgroup \
 COPY --from=builder /root/.local /home/appuser/.local
 ENV PATH=/home/appuser/.local/bin:$PATH
 
-# Copy application code
+# Force fresh copy of application code
+ARG CACHEBUST=20260131162918
 COPY --chown=appuser:appgroup app/ ./app/
 
 # Switch to non-root user
