@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 from typing import Optional
-from .crud import create_user, get_user, authenticate_user, refresh_token, logout_user
-from .deps import get_current_user
+from app.crud import create_user, get_user, authenticate_user, refresh_token, logout_user
+from app.deps import get_current_user
 
 router = APIRouter()
 
